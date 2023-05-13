@@ -44,7 +44,7 @@ class AppBarSection extends StatelessWidget {
                     prefixIcon: Container(
                         height: 8.w,
                         width: 8.w,
-                        padding: EdgeInsets.all(14),
+                        padding: EdgeInsets.all(11),
                         child: SvgPicture.asset(search))),
               ),
             ),

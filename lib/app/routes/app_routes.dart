@@ -11,6 +11,8 @@ abstract class Routes {
   static const SEARCH = _Paths.SEARCH;
   static const HISTORY = _Paths.HISTORY;
   static const AKUN = _Paths.AKUN;
+  static const SALDO = _Paths.SALDO;
+  static const SERVICE = _Paths.SERVICE;
 }
 
 abstract class _Paths {
@@ -23,4 +25,6 @@ abstract class _Paths {
   static const SEARCH = '/search';
   static const HISTORY = '/history';
   static const AKUN = '/akun';
+  static const SALDO = '/saldo';
+  static const SERVICE = '/service';
 }

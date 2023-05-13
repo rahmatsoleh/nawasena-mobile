@@ -29,76 +29,31 @@ class MainPagesView extends GetView<MainPagesController> {
             onTap: controller.changeIndex,
             type: BottomNavigationBarType.fixed,
             items: [
-              _itemBar(
-                  SizedBox(
-                      height: 24.w,
-                      width: 24.w,
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 4),
-                        child: SvgPicture.asset(
-                          home,
-                          colorFilter: ColorFilter.mode(
-                              controller.indexPages == 0
-                                  ? primaryColor
-                                  : Colors.grey.shade500,
-                              BlendMode.srcIn),
-                        ),
-                      )),
-                  'Beranda'),
-              _itemBar(
-                  SizedBox(
-                      height: 24.w,
-                      width: 24.w,
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 4),
-                        child: SvgPicture.asset(
-                          search,
-                          colorFilter: ColorFilter.mode(
-                              controller.indexPages == 1
-                                  ? primaryColor
-                                  : Colors.grey.shade500,
-                              BlendMode.srcIn),
-                        ),
-                      )),
-                  'Cari'),
-              _itemBar(
-                  SizedBox(
-                      height: 24.w,
-                      width: 24.w,
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 4),
-                        child: SvgPicture.asset(
-                          history,
-                          colorFilter: ColorFilter.mode(
-                              controller.indexPages == 2
-                                  ? primaryColor
-                                  : Colors.grey.shade500,
-                              BlendMode.srcIn),
-                        ),
-                      )),
-                  'Riwayat'),
-              _itemBar(
-                  SizedBox(
-                      height: 24.w,
-                      width: 24.w,
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 4),
-                        child: SvgPicture.asset(
-                          akun,
-                          colorFilter: ColorFilter.mode(
-                              controller.indexPages == 3
-                                  ? primaryColor
-                                  : Colors.grey.shade500,
-                              BlendMode.srcIn),
-                        ),
-                      )),
-                  'Akun'),
+              _itemBar(0, home, 'Beranda'),
+              _itemBar(1, jasa, 'Jasa'),
+              _itemBar(2, history, 'Riwayat'),
+              _itemBar(3, akun, 'Akun'),
             ]),
       );
     });
   }
 
-  _itemBar(Widget icon, String label) {
-    return BottomNavigationBarItem(icon: icon, label: label);
+  _itemBar(int index, String svg, String label) {
+    return BottomNavigationBarItem(
+        icon: SizedBox(
+            height: 24.w,
+            width: 24.w,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: SvgPicture.asset(
+                svg,
+                colorFilter: ColorFilter.mode(
+                    controller.indexPages == index
+                        ? primaryColor
+                        : Colors.grey.shade500,
+                    BlendMode.srcIn),
+              ),
+            )),
+        label: label);
   }
 }

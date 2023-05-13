@@ -1,23 +1,15 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  bool isSelectedCategory = false;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  List<Map<String, dynamic>> category = [
+    {"kategory": "Property", "status": false},
+    {"kategory": "Elektro", "status": false},
+    {"kategory": "Otomotif", "status": false}
+  ];
+
+  void selectCategory(int index) {
+    category[index]['status'] = true;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

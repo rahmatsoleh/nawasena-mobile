@@ -12,8 +12,12 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/main_pages/bindings/main_pages_binding.dart';
 import '../modules/main_pages/views/main_pages_view.dart';
+import '../modules/saldo/bindings/saldo_binding.dart';
+import '../modules/saldo/views/saldo_view.dart';
 import '../modules/search/bindings/search_binding.dart';
 import '../modules/search/views/search_view.dart';
+import '../modules/service/bindings/service_binding.dart';
+import '../modules/service/views/service_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 
@@ -64,6 +68,16 @@ class AppPages {
       name: _Paths.AKUN,
       page: () => const AkunView(),
       binding: AkunBinding(),
+    ),
+    GetPage(
+      name: _Paths.SALDO,
+      page: () => const SaldoView(),
+      binding: SaldoBinding(),
+    ),
+    GetPage(
+      name: _Paths.SERVICE,
+      page: () => const ServiceView(),
+      binding: ServiceBinding(),
     ),
   ];
 }

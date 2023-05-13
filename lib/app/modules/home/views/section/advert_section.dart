@@ -11,28 +11,25 @@ class AdvertSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
         child: Padding(
-      padding: DefaultPadding.updown,
+      padding: DefaultPadding.side,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: DefaultPadding.side,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Jasa untukmu',
-                  style: AppTextTheme.current.title2,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Jasa untukmu',
+                style: AppTextTheme.current.title2,
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Text(
+                  'Lihat semua',
+                  style: AppTextTheme.current.buttonTextDark,
                 ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Text(
-                    'Lihat semua',
-                    style: AppTextTheme.current.buttonTextDark,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
           SizedBox(height: 12.w),
           SizedBox(
@@ -42,7 +39,6 @@ class AdvertSection extends StatelessWidget {
                   context: context,
                   removeTop: true,
                   child: ListView.builder(
-                      padding: DefaultPadding.side,
                       scrollDirection: Axis.horizontal,
                       physics: ScrollPhysics(),
                       itemCount: 5,

@@ -8,7 +8,6 @@ import 'package:nawasena/app/utils/colors/colors.dart';
 import '../controllers/home_controller.dart';
 import 'section/advert_section.dart';
 import 'section/article_section.dart';
-import 'section/category_section.dart';
 import 'section/saldo_section.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -21,7 +20,6 @@ class HomeView extends GetView<HomeController> {
           slivers: [
             HeaderSection(),
             SaldoSection(),
-            CategorySection(),
             SliverPadding(padding: EdgeInsets.only(bottom: 8.w)),
             AdvertSection(),
             ArticleSection()

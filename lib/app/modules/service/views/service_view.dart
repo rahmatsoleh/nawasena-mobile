@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:nawasena/app/utils/colors/colors.dart';
 
 import '../controllers/service_controller.dart';
 import 'section/app_bar.dart';
@@ -11,8 +12,9 @@ class ServiceView extends GetView<ServiceController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: bgColor,
         body: CustomScrollView(
-      slivers: [AppBarSection(), ListServiceSection()],
-    ));
+          slivers: [AppBarSection(), ListServiceSection()],
+        ));
   }
 }

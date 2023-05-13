@@ -1,23 +1,24 @@
 import 'package:get/get.dart';
 
 class ServiceController extends GetxController {
-  //TODO: Implement ServiceController
+  List<Map<String, dynamic>> category = [
+    {"kategory": "All", "status": true},
+    {"kategory": "Property", "status": false},
+    {"kategory": "Elektro", "status": false},
+    {"kategory": "Otomotif", "status": false},
+    {"kategory": "Elektro", "status": false},
+    {"kategory": "Elektro", "status": false},
+    {"kategory": "Elektro", "status": false},
+  ];
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void selectCategory(int index) {
+    for (int i = 0; i < category.length; i++) {
+      if (i == index) {
+        category[i]['status'] = true;
+      } else {
+        category[i]['status'] = false;
+      }
+    }
+    update();
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

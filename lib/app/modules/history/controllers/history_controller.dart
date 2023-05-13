@@ -1,23 +1,72 @@
 import 'package:get/get.dart';
 
 class HistoryController extends GetxController {
-  //TODO: Implement HistoryController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+  List<Map<String, dynamic>> riwayat = [
+    {
+      "service": "Perbaiki ac rumah",
+      "tanggal": "23-03-2023 16:56",
+      "harga": 26000,
+      "status": "Selesai"
+    },
+    {
+      "service": "Perbaiki ac rumah",
+      "tanggal": "23-03-2023 16:56",
+      "harga": 26000,
+      "status": "Selesai"
+    },
+    {
+      "service": "Perbaiki ac rumah",
+      "tanggal": "23-03-2023 16:56",
+      "harga": 26000,
+      "status": "Selesai"
+    },
+    {
+      "service": "Perbaiki ac rumah",
+      "tanggal": "23-03-2023 16:56",
+      "harga": 26000,
+      "status": "Dibatalkan"
+    },
+    {
+      "service": "Perbaiki ac rumah",
+      "tanggal": "23-03-2023 16:56",
+      "harga": 26000,
+      "status": "Dibatalkan"
+    },
+    {
+      "service": "Perbaiki ac rumah",
+      "tanggal": "23-03-2023 16:56",
+      "harga": 26000,
+      "status": "Selesai"
+    },
+    {
+      "service": "Perbaiki ac rumah",
+      "tanggal": "23-03-2023 16:56",
+      "harga": 26000,
+      "status": "Selesai"
+    },
+    {
+      "service": "Perbaiki ac rumah",
+      "tanggal": "23-03-2023 16:56",
+      "harga": 26000,
+      "status": "Dibatalkan"
+    },
+    {
+      "service": "Perbaiki ac rumah",
+      "tanggal": "23-03-2023 16:56",
+      "harga": 26000,
+      "status": "Selesai"
+    },
+    {
+      "service": "Perbaiki ac rumah",
+      "tanggal": "23-03-2023 16:56",
+      "harga": 26000,
+      "status": "Selesai"
+    },
+    {
+      "service": "Perbaiki ac rumah",
+      "tanggal": "23-03-2023 16:56",
+      "harga": 26000,
+      "status": "Dibatalkan"
+    },
+  ];
 }

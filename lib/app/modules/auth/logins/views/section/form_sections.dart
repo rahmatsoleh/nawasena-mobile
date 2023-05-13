@@ -17,12 +17,13 @@ class FormSection extends StatelessWidget {
         children: [
           AppForm(
             controller: controller.emailC,
-            labelText: '',
-            hintText: 'Masukkan email atau no handphone',
+            labelText: 'Email',
+            hintText: 'Masukkan email',
           ),
+          SizedBox(height: 12.w),
           AppForm.password(
             controller: controller.passC,
-            labelText: '',
+            labelText: 'Password',
             hintText: 'Masukkan password',
           ),
           SizedBox(height: 12.w),

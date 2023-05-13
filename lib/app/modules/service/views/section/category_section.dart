@@ -17,7 +17,7 @@ class CategorySection extends StatelessWidget {
       padding: DefaultPadding.up,
       child: GetBuilder<ServiceController>(builder: (c) {
         return SizedBox(
-            height: 26.w,
+            height: 30.w,
             child: MediaQuery.removePadding(
                 context: context,
                 removeTop: true,
@@ -31,14 +31,14 @@ class CategorySection extends StatelessWidget {
                         child: GestureDetector(
                           onTap: () => controller.selectCategory(index),
                           child: Container(
-                            height: 26.w,
+                            height: 30.w,
                             padding: EdgeInsets.symmetric(horizontal: 12.w),
                             decoration: BoxDecoration(
                                 border:
-                                    Border.all(color: primaryColor, width: 0.8),
+                                    Border.all(color: kPrimary3, width: 0.8),
                                 color: controller.category[index]['status'] ==
                                         false
-                                    ? kPrimary3.withOpacity(0.7)
+                                    ? kPrimary3.withOpacity(0.3)
                                     : primaryColor,
                                 borderRadius: AppRadius.all),
                             child: Center(

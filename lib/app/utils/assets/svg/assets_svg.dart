@@ -6,3 +6,5 @@ const String sort = 'assets/svg/sort-amount-down.svg';
 const String wallet = 'assets/svg/wallet.svg';
 const String bell = 'assets/svg/bell.svg';
 const String jasa = 'assets/svg/hands-helping.svg';
+const String calendar = 'assets/svg/calendar-alt.svg';
+const String cto = 'assets/svg/external-link-alt.svg';

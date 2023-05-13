@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:my_packages_pack/my_packages.dart';
+import 'package:nawasena/app/utils/assets/images/assets_images.dart';
 
 import '../controllers/splash_controller.dart';
 
@@ -21,10 +21,10 @@ class SplashView extends GetView<SplashController> {
               color: kWhite,
               child: Center(
                   child: Container(
-                height: 120.h,
-                width: 220.w,
-                child: Lottie.network(
-                    'https://assets7.lottiefiles.com/packages/lf20_nvhJxJ38ZY.json'),
+                height: 220.h,
+                width: 320.w,
+                decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage(logo))),
               )),
             ),
           );

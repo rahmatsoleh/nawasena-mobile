@@ -8,7 +8,7 @@ class LoginService {
     Dio _dio = Dio();
     try {
       final response = await _dio.post(Endpoint.login,
-          data: {'username': email, 'password': pass},
+          data: {'email': email, 'password': pass},
           options: Options(headers: {'Content-Type': 'application/json'}));
       print(response.statusCode);
       print(response.statusMessage);

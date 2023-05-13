@@ -27,7 +27,7 @@ class SessionManager {
     final token = await _prefs?.getString('token');
     if (token == null) {
       clearSession();
-      Get.offAndToNamed(Routes.LOGIN);
+      Get.offAndToNamed(Routes.LOGINS);
     } else {
       Get.offAndToNamed(Routes.MAIN_PAGES);
     }

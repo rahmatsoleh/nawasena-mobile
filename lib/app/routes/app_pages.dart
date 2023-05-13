@@ -1,13 +1,19 @@
 import 'package:get/get.dart';
 
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
-import '../modules/auth/login/bindings/login_binding.dart';
-import '../modules/auth/login/views/login_view.dart';
-import '../modules/main_pages/bindings/main_pages_binding.dart';
-import '../modules/main_pages/views/main_pages_view.dart';
+import '../modules/akun/bindings/akun_binding.dart';
+import '../modules/akun/views/akun_view.dart';
+import '../modules/auth/logins/bindings/logins_binding.dart';
+import '../modules/auth/logins/views/logins_view.dart';
 import '../modules/auth/register/bindings/register_binding.dart';
 import '../modules/auth/register/views/register_view.dart';
+import '../modules/history/bindings/history_binding.dart';
+import '../modules/history/views/history_view.dart';
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
+import '../modules/main_pages/bindings/main_pages_binding.dart';
+import '../modules/main_pages/views/main_pages_view.dart';
+import '../modules/search/bindings/search_binding.dart';
+import '../modules/search/views/search_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 
@@ -25,11 +31,6 @@ class AppPages {
       binding: HomeBinding(),
     ),
     GetPage(
-      name: _Paths.LOGIN,
-      page: () => const LoginView(),
-      binding: LoginBinding(),
-    ),
-    GetPage(
       name: _Paths.REGISTER,
       page: () => const RegisterView(),
       binding: RegisterBinding(),
@@ -43,6 +44,26 @@ class AppPages {
       name: _Paths.SPLASH,
       page: () => const SplashView(),
       binding: SplashBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGINS,
+      page: () => const LoginsView(),
+      binding: LoginsBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEARCH,
+      page: () => const SearchView(),
+      binding: SearchBinding(),
+    ),
+    GetPage(
+      name: _Paths.HISTORY,
+      page: () => const HistoryView(),
+      binding: HistoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.AKUN,
+      page: () => const AkunView(),
+      binding: AkunBinding(),
     ),
   ];
 }

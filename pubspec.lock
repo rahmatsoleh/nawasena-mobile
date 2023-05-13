@@ -143,7 +143,7 @@ packages:
     source: hosted
     version: "5.7.0"
   flutter_svg:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_svg
       sha256: f991fdb1533c3caeee0cdc14b04f50f0c3916f0dbcbc05237ccbe4e3c6b93f3f
@@ -169,7 +169,7 @@ packages:
     source: hosted
     version: "4.6.5"
   google_fonts:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: google_fonts
       sha256: "6b6f10f0ce3c42f6552d1c70d2c28d764cf22bb487f50f66cca31dcd5194f4d6"
@@ -244,10 +244,10 @@ packages:
     dependency: "direct main"
     description:
       name: my_packages_pack
-      sha256: "8bf91ebc2e8be50debe24b58712c38ae26685182d2b8218d61af831ffc15b4a7"
+      sha256: "14048b6d098ee4846199c4516634ab4eabc4425804d0ade6cbf999deba457855"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.1"
+    version: "0.0.2"
   path:
     dependency: transitive
     description:

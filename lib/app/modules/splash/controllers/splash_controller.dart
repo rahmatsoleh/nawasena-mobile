@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
-
-import '../../../utils/session/session_manager.dart';
+import 'package:nawasena/app/routes/app_pages.dart';
 
 class SplashController extends GetxController {
   Future<void> login() async {
     Future.delayed(3.seconds, () {
-      session.checkSession();
+      // session.checkSession();
+      Get.offAllNamed(Routes.LOGINS);
     });
   }
 }

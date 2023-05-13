@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../../routes/app_pages.dart';
 import '../services/login_services.dart';
 
-class LoginController extends GetxController {
+class LoginsController extends GetxController {
   TextEditingController emailC = TextEditingController();
   TextEditingController passC = TextEditingController();
   bool isLoading = false;

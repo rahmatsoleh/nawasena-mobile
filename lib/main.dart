@@ -22,7 +22,7 @@ void main() async {
           AppTextTheme.init(context);
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Nawasena',
+            title: 'Helpin',
             initialRoute: AppPages.INITIAL,
             getPages: AppPages.routes,
             theme: AppTheme.light,

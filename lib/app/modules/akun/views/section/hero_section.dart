@@ -22,12 +22,12 @@ class HeroSection extends StatelessWidget {
           ),
           SizedBox(height: 12.w),
           Text(
-            '${controller.user.name ?? "Test Almanac 1"}',
+            "Test Almanac 1",
             style: AppTextTheme.current.appbarTextLight,
           ),
           SizedBox(height: 4.w),
           Text(
-            '${controller.user.name ?? "test@gmail.com"}',
+            "test@gmail.com",
             style: AppTextTheme.current.labelForm,
           ),
           SizedBox(height: 320),

@@ -61,10 +61,15 @@ class ListServiceSection extends StatelessWidget {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(
-                                        '${controller.provider[index].namaUsaha}',
-                                        style: AppTextTheme
-                                            .current.appbarTextLight,
+                                      SizedBox(
+                                        width: Get.width * 0.4,
+                                        child: Text(
+                                          '${controller.provider[index].namaUsaha}',
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                          style: AppTextTheme
+                                              .current.appbarTextLight,
+                                        ),
                                       ),
                                       controller.provider[index].status ==
                                               "active"

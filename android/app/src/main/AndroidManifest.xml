@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nawasena">
+    package="com.helpin">
    <application
-        android:label="nawasena"
+        android:label="Helpin"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

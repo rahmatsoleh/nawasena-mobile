@@ -6,6 +6,8 @@ import '../modules/auth/logins/bindings/logins_binding.dart';
 import '../modules/auth/logins/views/logins_view.dart';
 import '../modules/auth/register/bindings/register_binding.dart';
 import '../modules/auth/register/views/register_view.dart';
+import '../modules/detail_service/bindings/detail_service_binding.dart';
+import '../modules/detail_service/views/detail_service_view.dart';
 import '../modules/history/bindings/history_binding.dart';
 import '../modules/history/views/history_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -78,6 +80,11 @@ class AppPages {
       name: _Paths.SERVICE,
       page: () => const ServiceView(),
       binding: ServiceBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_SERVICE,
+      page: () => const DetailServiceView(),
+      binding: DetailServiceBinding(),
     ),
   ];
 }

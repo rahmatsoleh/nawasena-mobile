@@ -13,6 +13,7 @@ abstract class Routes {
   static const AKUN = _Paths.AKUN;
   static const SALDO = _Paths.SALDO;
   static const SERVICE = _Paths.SERVICE;
+  static const DETAIL_SERVICE = _Paths.DETAIL_SERVICE;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const AKUN = '/akun';
   static const SALDO = '/saldo';
   static const SERVICE = '/service';
+  static const DETAIL_SERVICE = '/detail-service';
 }

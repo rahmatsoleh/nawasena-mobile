@@ -13,8 +13,15 @@ class ServiceView extends GetView<ServiceController> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: bgColor,
-        body: CustomScrollView(
-          slivers: [AppBarSection(), ListServiceSection()],
+        body: RefreshIndicator(
+          onRefresh: () {
+            return Future.delayed(2.seconds, () {
+              controller.getCategory();
+            });
+          },
+          child: CustomScrollView(
+            slivers: [AppBarSection(), ListServiceSection()],
+          ),
         ));
   }
 }

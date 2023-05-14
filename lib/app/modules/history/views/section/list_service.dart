@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:my_packages_pack/my_packages.dart';
 import 'package:nawasena/app/modules/history/controllers/history_controller.dart';
 import 'package:nawasena/app/utils/colors/colors.dart';
@@ -17,7 +18,9 @@ class ListHistorySection extends StatelessWidget {
         padding: DefaultPadding.all,
         sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
-                childCount: controller.riwayat.length, (_, index) {
+                childCount: controller.histories.length, (_, index) {
+          DateTime date = DateTime.parse(controller.histories[index].dateTime!);
+          String formattedDate = DateFormat('dd-MM-yyyy hh:mm:ss').format(date);
           return Padding(
             padding: EdgeInsets.only(bottom: 6.w),
             child: Container(
@@ -35,11 +38,7 @@ class ListHistorySection extends StatelessWidget {
                       height: 36.w,
                       width: 36.w,
                       decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                  'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'),
-                              fit: BoxFit.cover)),
+                          shape: BoxShape.circle, color: kPrimary3),
                     ),
                   ),
                   SizedBox(width: 8.w),
@@ -50,11 +49,11 @@ class ListHistorySection extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '${controller.riwayat[index]['service']}',
+                          '${controller.histories[index].providerService?.namaUsaha}',
                           style: AppTextTheme.current.appbarTextLight,
                         ),
                         Text(
-                          '${controller.riwayat[index]['tanggal']}',
+                          '${formattedDate}',
                           style: GoogleFonts.inter(
                               fontWeight: FontWeight.w400,
                               color: kGrey1,
@@ -68,13 +67,16 @@ class ListHistorySection extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          controller.riwayat[index]['status'] == "Selesai"
+                          controller.histories[index].statusTransaction ==
+                                  "Selesai"
                               ? AppBadges.success(
-                                  text: controller.riwayat[index]['status'])
+                                  text: controller
+                                      .histories[index].statusTransaction)
                               : AppBadges.danger(
-                                  text: controller.riwayat[index]['status']),
+                                  text: controller
+                                      .histories[index].statusTransaction),
                           Text(
-                            'Rp. ${controller.riwayat[index]['harga']}',
+                            'Rp. ${controller.histories[index].payment}',
                             style: GoogleFonts.inter(
                                 fontWeight: FontWeight.w400,
                                 color: kGrey1,

@@ -13,7 +13,7 @@ class LoginService {
       print(response.statusCode);
       print(response.statusMessage);
       if (response.statusCode == 200) {
-        var token = response.data['accessToken'];
+        var token = response.data['data']['accessToken'];
         session.saveSession(token);
         print(token);
         print('Berhasil');

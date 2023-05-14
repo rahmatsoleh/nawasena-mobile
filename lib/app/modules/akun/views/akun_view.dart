@@ -12,16 +12,21 @@ class AkunView extends GetView<AkunController> {
   const AkunView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: bgColor,
-        body: Padding(
-          padding: DefaultPadding.all,
-          child: CustomScrollView(
-            slivers: [
-              SliverPadding(padding: EdgeInsets.symmetric(vertical: 32.w)),
-              HeroSection()
-            ],
-          ),
-        ));
+    return GetBuilder<AkunController>(builder: (context) {
+      return AppLoading(
+        isLoading: controller.isLoading,
+        child: Scaffold(
+            backgroundColor: bgColor,
+            body: Padding(
+              padding: DefaultPadding.all,
+              child: CustomScrollView(
+                slivers: [
+                  SliverPadding(padding: EdgeInsets.symmetric(vertical: 32.w)),
+                  HeroSection()
+                ],
+              ),
+            )),
+      );
+    });
   }
 }

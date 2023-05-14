@@ -8,3 +8,5 @@ const String bell = 'assets/svg/bell.svg';
 const String jasa = 'assets/svg/hands-helping.svg';
 const String calendar = 'assets/svg/calendar-alt.svg';
 const String cto = 'assets/svg/external-link-alt.svg';
+const String pin = 'assets/svg/map-marker-alt.svg';
+const String money = 'assets/svg/money-bill-wave.svg';

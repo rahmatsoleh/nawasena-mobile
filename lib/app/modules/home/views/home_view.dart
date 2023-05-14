@@ -16,14 +16,21 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: bgColor,
-        body: CustomScrollView(
-          slivers: [
-            HeaderSection(),
-            SaldoSection(),
-            SliverPadding(padding: EdgeInsets.only(bottom: 8.w)),
-            AdvertSection(),
-            ArticleSection()
-          ],
+        body: RefreshIndicator(
+          onRefresh: () {
+            return Future.delayed(2.seconds, () {
+              controller.getNews();
+            });
+          },
+          child: CustomScrollView(
+            slivers: [
+              HeaderSection(),
+              SaldoSection(),
+              SliverPadding(padding: EdgeInsets.only(bottom: 8.w)),
+              AdvertSection(),
+              ArticleSection()
+            ],
+          ),
         ));
   }
 }

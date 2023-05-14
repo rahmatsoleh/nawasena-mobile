@@ -16,46 +16,83 @@ class CategorySection extends StatelessWidget {
     return Padding(
       padding: DefaultPadding.up,
       child: GetBuilder<ServiceController>(builder: (c) {
-        return SizedBox(
-            height: 30.w,
-            child: MediaQuery.removePadding(
-                context: context,
-                removeTop: true,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    physics: ScrollPhysics(),
-                    itemCount: controller.category.length,
-                    itemBuilder: (_, index) {
-                      return Padding(
-                        padding: EdgeInsets.only(right: 6.w),
-                        child: GestureDetector(
-                          onTap: () => controller.selectCategory(index),
-                          child: Container(
-                            height: 30.w,
-                            padding: EdgeInsets.symmetric(horizontal: 12.w),
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: kPrimary3, width: 0.8),
-                                color: controller.category[index]['status'] ==
-                                        false
-                                    ? kPrimary3.withOpacity(0.3)
-                                    : primaryColor,
-                                borderRadius: AppRadius.all),
-                            child: Center(
-                                child: Text(
-                              '${controller.category[index]['kategory']}',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w400,
-                                  color: controller.category[index]['status'] ==
-                                          false
-                                      ? primaryColor
-                                      : kWhite,
-                                  fontSize: 12.sp),
-                            )),
-                          ),
-                        ),
-                      );
-                    })));
+        return SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(right: 6.w),
+                child: GestureDetector(
+                  onTap: () => controller.selectCategory(99, ""),
+                  child: Container(
+                    height: 30.w,
+                    padding: EdgeInsets.symmetric(horizontal: 12.w),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: kPrimary3, width: 0.8),
+                        color: controller.selectedCategory == 99
+                            ? primaryColor
+                            : kPrimary3.withOpacity(0.3),
+                        borderRadius: AppRadius.all),
+                    child: Center(
+                        child: Text(
+                      'Semua',
+                      style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w400,
+                          color: controller.selectedCategory == 99
+                              ? kWhite
+                              : primaryColor,
+                          fontSize: 12.sp),
+                    )),
+                  ),
+                ),
+              ),
+              SizedBox(
+                  height: 30.w,
+                  child: MediaQuery.removePadding(
+                      context: context,
+                      removeTop: true,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: controller.category.length,
+                          itemBuilder: (_, index) {
+                            return Padding(
+                              padding: EdgeInsets.only(right: 6.w),
+                              child: GestureDetector(
+                                onTap: () => controller.selectCategory(
+                                    index, controller.category[index].id ?? ""),
+                                child: Container(
+                                  height: 30.w,
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 12.w),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: kPrimary3, width: 0.8),
+                                      color:
+                                          controller.selectedCategory == index
+                                              ? primaryColor
+                                              : kPrimary3.withOpacity(0.3),
+                                      borderRadius: AppRadius.all),
+                                  child: Center(
+                                      child: Text(
+                                    '${controller.category[index].name}',
+                                    style: GoogleFonts.inter(
+                                        fontWeight: FontWeight.w400,
+                                        color:
+                                            controller.selectedCategory == index
+                                                ? kWhite
+                                                : primaryColor,
+                                        fontSize: 12.sp),
+                                  )),
+                                ),
+                              ),
+                            );
+                          }))),
+            ],
+          ),
+        );
       }),
     );
   }
